@@ -1,0 +1,122 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1em;
+    background-color: rgb(42, 42, 48);
+    color: white;
+    height: 2.5em;
+}
+.header_home{
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.home{
+    text-decoration: none;
+    color: white;
+}
+.header_logo_block{
+    display: flex;
+    flex-direction: row;
+}
+.header_logo_logo{
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 0.3em;
+}
+
+.header_menu{
+    display: inline-flex;
+    flex-direction: row;
+    max-width: 400px;
+    font-size: 18px;
+    margin-right: 4em;
+}
+.header_logo_home {
+    height: 20px;
+    width: 20px;
+    filter: invert(1);
+    cursor: pointer;
+    margin: 4px 0 0 0px;   
+}
+.header_logo_cart{
+    height: 22px;
+    width: 24px;
+    filter: contrast(0.2);
+    cursor: pointer;
+    margin: 1px 10px 0 15px;
+    position: relative;   
+}
+.header_block_cart > a{
+    text-decoration: none;
+}
+.header_block_cart > a > .header_logo_cart_items_filled{
+    display: block;
+    color: white;
+    border: 1px solid red;
+    width: 13px;
+    height: 17px;
+    text-align: center;
+    padding: 0 3px;
+    background-color: red;
+    border-radius: 50px;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    
+}
+.header_logo_cart_items_empty{
+    display: none;
+}
+.header_logo_cart_filled{
+    height: 22px;
+    width: 24px;
+    filter: contrast(0.2);
+    cursor: pointer;
+    margin: 1px 10px 0 10px;   
+}
+
+.button_menu_down > img{
+    height: 20px;
+    width: 20px;
+    filter: invert(1);
+    cursor: pointer;
+    margin: 0px 0 0 10px;
+    padding: 2px 1.2em 1.4em 0.5em;
+    position: absolute;
+}
+.button_menu{
+    position: relative;
+    display: inline-block;
+}
+.button_menu_content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width: 5em;
+    box-shadow: 0px 8px 10px 0px black;
+    border-radius: 10px;
+    text-align: center;
+}
+.button_menu_content a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 12px 0px;
+}
+.button_menu_content a:hover{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+} 
+.button_menu_down:hover .button_menu_content{
+    display: block;
+    margin: 40px 0px 0 0; 
+    right: 5px;
+}
+

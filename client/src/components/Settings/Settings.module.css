@@ -1,0 +1,162 @@
+.settings_main {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 100vh;
+   text-align: center;
+ }
+ .settings_main > h3 {
+   margin: 20px 0;
+   font-size: 26px;
+ }
+ .settings_block {
+   margin: 20px 400px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+ .settings_profile_form, .settings_delivery_form{
+   display: flex;
+   flex-direction: row;
+ }
+ 
+ .settings_profile_form, .settings_delivery_form{
+ margin-bottom: 20px;
+ width: 400px;
+ }
+ .settings_delivery_form{
+   margin-top: 20px;
+   }
+ .settings_profile_form > section, .settings_delivery_form > section > button{
+   margin: 10px 0px 0 0;
+ }
+ 
+ .settings_profile_form > section > button, .settings_delivery_form > section > button{
+   padding: 7px 15px 8px 15px;
+   width: 85px;
+   background: black;
+   font-weight: bold;
+   color: white;
+   font-size: 14px;
+   cursor: pointer;
+   border-radius: 5px;
+   border: 2px solid black;
+}
+.settings_profile_form > section > button:hover, .settings_delivery_form > section > button:hover{
+  background: blue;
+}
+ .settings_delivery_form > .delivery_hidden,
+ .settings_profile_form> .profile_hidden {
+   display: none;
+ }
+ 
+.settings_profile_form> form > label, .settings_delivery_form > form > label{
+   margin-top: 10px;
+ }
+ 
+ .settings_profile_form > form > label > p, .settings_delivery_form > form > label > p  {
+   padding-bottom: 5px;
+   font-weight: bold;
+ }
+ 
+ .settings_profile_form > form > label > input, .settings_delivery_form > form > label > input{
+   padding: 10px;
+   margin: 10px 10px;
+   border-radius: 10px;
+ }
+ .settings_block > form > button {
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 10px;
+ }
+ .submit > input {
+   margin-top: 5px;
+   padding: 5px 10px 8px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: black;
+   color: white;
+   border: 0px solid black;
+   font-size: 16px;
+ }
+ .submit > input:hover,
+ .settings_main >section> a:hover  {
+   background-color: blue;
+ }
+ .settings_main> section {
+   display: flex;
+   justify-content: center;
+ }
+ .settings_main> section > a {
+   width: 80px;
+   margin: 20px 6px 20px 0;
+   padding: 5px 10px 8px 10px;
+   font-size: 16px;
+   text-align: center;
+   background: black;
+   color: white;
+   cursor: pointer;
+   border-radius: 5px;
+   text-decoration: none;
+ }
+ 
+ .modal_close {
+   position: absolute;
+   top: 15px;
+   right: 25px;
+   padding: 0;
+   font-weight: 300;
+   font-size: 50px;
+   line-height: 1;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   opacity: 0.7;
+ }
+ .modal_message {
+   display: flex;
+   justify-content: space-between;
+   margin: 10px 200px 0 200px;
+   padding: 5px 15px;
+   background-color: red;
+   color: white;
+   border-radius: 10px;
+ }
+ .modal_message > button {
+   margin: 3px 0 0 0;
+   border: none;
+   background: transparent;
+   color: white;
+   font-weight: bold;
+   cursor: pointer;
+ }
+
+ .message_block {
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 10px 38%;
+  border: 1px solid green;
+  max-width: 300px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  transition: 0.3s;
+}
+.message_block > p {
+  padding-right: 10px;
+  word-break: break-word;
+}
+.message_block > button {
+  border: none;
+  word-break: break-word;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  margin: 4px 10px 0 10px;
+}
+.close {
+  display: none;
+}

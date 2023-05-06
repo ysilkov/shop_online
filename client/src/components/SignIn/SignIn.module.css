@@ -1,0 +1,83 @@
+.main {
+  background-color: white;
+  background-size: 100%;
+  min-height: 100vh;
+
+  text-align: center;
+}
+.main_container {
+  padding-top: 100px;
+}
+.main_container > h1 {
+  margin-bottom: 20px;
+}
+.username,
+.password {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px 0;
+  padding-bottom: 25px;
+}
+
+.input_password,
+.input_email {
+  padding: 15px;
+  margin: 10px 40%;
+  border-radius: 10px;
+}
+.sign_up {
+  margin-top: 30px;
+  cursor: pointer;
+}
+.sign_up > a {
+  color: black;
+}
+.sign_up > a:hover {
+  color: blue;
+  text-decoration: none;
+}
+.error_message {
+  color: red;
+  margin: 10px 0;
+}
+.message_block {
+  display: inline-flex;
+  text-align: center;
+  margin: 10px 0;
+  border: 1px solid red;
+  max-width: 800px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  transition: 0.3s;
+}
+.message_block > p {
+  padding-right: 10px;
+  word-break: break-word;
+}
+.message_block > button {
+  border: none;
+  word-break: break-word;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  margin: 4px 10px 0 10px;
+}
+.close {
+  display: none;
+}
+.submit > input {
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  background: black;
+  color: white;
+  font-size: 14px;
+}
+.submit > input:hover {
+  background-color: blue;
+}
+.sign_up > a:nth-child(2) {
+  padding-left: 20px;
+}

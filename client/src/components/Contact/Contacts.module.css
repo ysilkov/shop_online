@@ -1,0 +1,28 @@
+.contacts_block {
+  background-color: rgb(231, 228, 228);
+  text-align: center;
+}
+.contacts_block > h3 {
+  padding: 10px 0;
+}
+
+.contacts_block > ul {
+  list-style: none;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contacts_block > ul > li {
+  padding-right: 15px;
+}
+.contacts_block > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+.contacts_block > ul > li > a:hover {
+  text-decoration: none;
+  color: blue;
+  transition: 0.2s;
+}

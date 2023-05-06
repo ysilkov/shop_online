@@ -1,0 +1,63 @@
+.order_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+}
+.order_block > h3, .order_main_message {
+  margin: 30px 0 20px 0;
+  font-size: 24px;
+  text-align: center;
+}
+.order_container {
+  margin-top: 20px;
+}
+.order_container > hr {
+  border: 0.1px solid #ddd;
+}
+.order_items > p {
+  padding: 0 0 5px 40px;
+  font-weight: 500;
+}
+.order_items > p:nth-child(1) {
+  padding-top: 20px;
+  font-weight: 500;
+}
+.cart_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+.cart_table th {
+  font-weight: bold;
+  padding: 10px 30px;
+  border-bottom: 2px solid #ddd;
+}
+
+.cart_table td {
+  padding: 10px 30px;
+  border-bottom: 2px solid #ddd;
+  text-align: center;
+}
+.cart_table td:nth-child(2) > img {
+  width: 30px;
+  height: 30px;
+}
+.order_main > a {
+  margin: 50px 0px 20px 30px;
+  width: 70px;
+  padding: 7px 15px 10px 15px;
+  text-align: center;
+  background: black;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.order_main > a:hover {
+  background: blue;
+}
