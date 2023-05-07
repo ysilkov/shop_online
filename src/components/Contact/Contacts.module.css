@@ -9,9 +9,10 @@
 .contacts_block > ul {
   list-style: none;
   padding-bottom: 10px;
+  margin: 0 350px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .contacts_block > ul > li {
@@ -26,3 +27,35 @@
   color: blue;
   transition: 0.2s;
 }
+@media screen and (max-width: 767px) and (min-width: 400px) {
+  .contacts_block {
+    background-color: rgb(231, 228, 228);
+    text-align: center;
+    font-size: 14px;
+  }
+  .contacts_block > h3 {
+    padding: 10px 0;
+  }
+  
+  .contacts_block > ul {
+    list-style: none;
+    padding-bottom: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .contacts_block > ul > li {
+    padding-right: 15px;
+  }
+  .contacts_block > ul > li > a {
+    text-decoration: none;
+    color: black;
+  }
+  .contacts_block > ul > li > a:hover {
+    text-decoration: none;
+    color: blue;
+    transition: 0.2s;
+  }
+  }

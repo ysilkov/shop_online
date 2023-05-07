@@ -119,4 +119,30 @@
     margin: 40px 0px 0 0; 
     right: 5px;
 }
+@media screen and (max-width: 767px) {
+    .header_logo_cart{
+        height: 22px;
+        width: 24px;
+        filter: contrast(0.2);
+        cursor: pointer;
+        margin: 1px 10px 0 15px;
+        position: relative;   
+    }
+ .header_block_cart > a > .header_logo_cart_items_filled{
+        display: block;
+        color: white;
+        border: 1px solid red;
+        width: 13px;
+        height: 17px;
+        text-align: center;
+        padding: 0 3px;
+        background-color: red;
+        border-radius: 50px;
+        font-size: 12px;
+        position: relative;
+        top: -34px;
+        right: 0;
+        left: 30px
 
+    } 
+  }

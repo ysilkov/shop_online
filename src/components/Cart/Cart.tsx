@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
 import Contacts from "../Contact/Contacts";
 import Footer from "../Footer/Footer";
@@ -12,18 +12,21 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const { order } = useAppSelector((state) => state.cart);
   const { token } = useAppSelector((state) => state.auth);
-  const [deliveryModal, setDeliveryModal]: [
-    boolean,
-    React.Dispatch<React.SetStateAction<boolean>>
-  ] = useState(false);
-  const [counts, setCounts] = useState(order.map((el) => el.count));
+  const [deliveryModal, setDeliveryModal] = useState<boolean>(false);
+  const [counts, setCounts] = useState<number[]>(
+    useMemo(() => order?.map((el) => el.count) || [], [order])
+  );
+
   const dispatch = useAppDispatch();
-  const handleCountChange = (index: number, value: number, id: string) => {
-    const newCounts = [...counts];
-    newCounts[index] = value;
-    setCounts(newCounts);
-    dispatch(changeCountProduct({ id: id, count: value }));
-  };
+  const handleCountChange = useCallback(
+    (index: number, value: number, id: string) => {
+      const newCounts = [...counts];
+      newCounts[index] = value;
+      setCounts(newCounts);
+      dispatch(changeCountProduct({ id: id, count: value }));
+    },
+    [counts, dispatch]
+  );
   const navigate = useNavigate();
   const deleteProduct = (id: string) => {
     dispatch(removeOrder(id));
