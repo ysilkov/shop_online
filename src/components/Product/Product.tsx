@@ -8,6 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useAppSelector } from "../../hooks/hook";
 import Contacts from "../Contact/Contacts";
+import "../../carousel.css";
 
 const Product = React.memo(() => {
   const product = useAppSelector((state) => state.products.product);
