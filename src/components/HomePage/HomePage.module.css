@@ -13,8 +13,6 @@
   margin: 10px 0 10px 0px;
   padding: 10px 0;
   background-color: rgb(231, 228, 228);
-  display: flex;
-  flex-direction: column;
 }
 
 .main_filter > form {
@@ -74,3 +72,71 @@
   margin-right: 5px;
   cursor: pointer;
 }
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .main > h1 {
+    margin: 10px 0 10px 10px;
+    font-size: 14px;
+  }
+  .main_filter {
+    margin: 10px 0 0px 0px;
+    padding: 10px 0;
+    background-color: rgb(231, 228, 228);
+  }
+  
+  .main_filter > form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 10px;
+  }
+  .main_filter > form > label > span {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .main_filter > form > label > select,
+  .main_filter > form > label > input {
+    padding: 5px 0;
+    border-radius: 5px;
+    text-indent: 5px;
+  }
+  .main_filter > form > label {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+  }
+  .main_pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .main_pagination_page {
+    height: 30px;
+    width: 30px;
+  }
+  .main_pagination_page {
+    display: none;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: transparent;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .main_pagination_page:nth-child(-n + 1),
+  .main_pagination_page:nth-last-child(-n + 1) {
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: transparent;
+    margin-right: 5px;
+    cursor: pointer;
+    display: block;
+  }
+  .main_pagination_button_active {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(183, 225, 238);
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  }
