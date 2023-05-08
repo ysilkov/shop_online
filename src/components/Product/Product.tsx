@@ -2,16 +2,23 @@ import React from "react";
 import style from "./Product.module.css";
 import { ReactComponent as Star } from "../../image/star.svg";
 import Header from "../Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { useAppSelector } from "../../hooks/hook";
+import { useAppDispatch, useAppSelector } from "../../hooks/hook";
 import Contacts from "../Contact/Contacts";
 import "../../carousel.css";
+import { orderProduct } from "../../store/cart";
 
 const Product = React.memo(() => {
   const product = useAppSelector((state) => state.products.product);
+  const history = useNavigate();
+  const dispatch = useAppDispatch();
+  const addProductToCart = (id: string) => {
+    dispatch(orderProduct({ id: id, count: 1 }));
+    history("/cart");
+  };
   return (
     <div>
       <Header />
@@ -112,7 +119,7 @@ const Product = React.memo(() => {
                 <strong>Description:</strong> {el.description}
               </p>
               <section className={style.product_button}>
-                <button>Buy Now</button>
+                <button onClick={() => addProductToCart(el.id)}>Buy Now</button>
               </section>
               <section className={style.product_link}>
                 <Link to={"/"}>
