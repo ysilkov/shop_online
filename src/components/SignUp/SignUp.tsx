@@ -10,10 +10,10 @@ const SignUp = React.memo(() => {
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [closeMessage, setCloseMessage] = useState(false);
   const [emailError, setEmailError] = useState(
-    "Поштова адреса не може бути пустою"
+    "The postal address cannot be empty"
   );
   const [passwordError, setPasswordError] = useState(
-    "Пароль не може бути пустим"
+    "The password cannot be empty"
   );
   const dispatch = useAppDispatch();
   const state = useAppSelector((state) => state.auth);
@@ -22,7 +22,7 @@ const SignUp = React.memo(() => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("Поштова адреса не коректна");
+      setEmailError("The postal address is not correct");
     } else {
       setEmailError("");
     }
@@ -31,7 +31,7 @@ const SignUp = React.memo(() => {
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,20}$/;
     if (!passwordRegex.test(String(e.target.value))) {
       setPasswordError(
-        "Пароль має містити хоча б одну велику, малу літеру та цифру"
+        "The password must contain at least one uppercase, lowercase letter and a number"
       );
     } else {
       setPasswordError("");

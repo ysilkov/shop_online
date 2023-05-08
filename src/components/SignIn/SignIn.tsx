@@ -10,10 +10,10 @@ const SignIn = () => {
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [closeMessage, setCloseMessage] = useState(false);
   const [emailError, setEmailError] = useState(
-    "Поштова адреса не може бути пустою"
+    "The postal address cannot be empty"
   );
   const [passwordError, setPasswordError] = useState(
-    "Пароль не може бути пустим"
+    "The password cannot be empty"
   );
   const dispatch = useAppDispatch();
   const history = useNavigate();
@@ -22,16 +22,16 @@ const SignIn = () => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("Поштова адреса не коректна");
+      setEmailError("The postal address is not correct");
     } else {
       setEmailError("");
     }
   };
   const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length < 3 || e.target.value.length > 20) {
-      setPasswordError("Пароль має бути від 3 до 20 символів");
+      setPasswordError("The password must be between 3 and 20 characters");
       if (!e.target.value) {
-        setPasswordError("Пароль не може бути пустим");
+        setPasswordError("The password cannot be empty");
       }
     } else {
       setPasswordError("");
