@@ -28,7 +28,6 @@ const OrderPage = () => {
 useEffect(()=>{
   dispatch(getAllOrders({id: id as string}))
 }, [dispatch, id])
-  console.log(message)
   return (
     <div className={style.order_main}>
       <Header />

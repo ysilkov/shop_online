@@ -61,7 +61,6 @@ export const Auth = createSlice({
         state.address = action.payload.address !== undefined ? action.payload.address : null;
       })
       .addCase(getSettingsProfile.fulfilled, (state, action) => {
-        console.log(action.payload.message)
         state.message = action.payload.message;
         state.email = action.payload.email;
         state.fullName = action.payload.fullName;

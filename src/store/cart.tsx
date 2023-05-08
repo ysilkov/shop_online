@@ -55,7 +55,6 @@ export const Cart = createSlice({
       state.message = action.payload.message;
     })
     .addCase(getAllOrders.fulfilled, (state, action) =>{
-      console.log(action.payload.message)
       state.message = action.payload.message;
       state.allOrders = action.payload.orders === undefined ? [] : action.payload.orders;
     });

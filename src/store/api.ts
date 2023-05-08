@@ -206,9 +206,7 @@ export const getSettingsDelivery = createAsyncThunk(
     try {
       const response = await fetch("https://fast-bayou-33512.herokuapp.com/api/settingsDelivery/", {
         method: "POST",
-        headers: { 
-        "Content-Type": "application/json",
-        "Cache-Control": "no-cache" },
+        headers: { "Content-Type": "application/json"},
         body: JSON.stringify(data),
       });
       const dataRes = await response.json();

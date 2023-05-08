@@ -12,8 +12,9 @@ const Settings = () => {
   const { email, fullName, id, phone, address, message } = useAppSelector(
     (state) => state.auth
   );
+  console.log(email)
   const dispatch = useAppDispatch();
-  const [emailInput, setEmailInput] = useState(email ?? "");
+  const [emailInput, setEmailInput] = useState(email);
   const [fullNameInput, setFullNameInput] = useState(fullName);
   const [password, setPassword] = useState("");
   const [phoneInput, setPhoneInput] = useState(phone != null ? phone : "+380");
@@ -31,7 +32,8 @@ const Settings = () => {
   );
   const [profile, setProfile] = useState(false);
   const [delivery, setDelivery] = useState(false);
-  const sendProfile = () => {
+  const sendProfile = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
     dispatch(
       getSettingsProfile({
         fullName: fullNameInput as string,
@@ -40,8 +42,12 @@ const Settings = () => {
         id: id as string,
       })
     );
+    setCloseMessage(false) 
+    setPassword("")
+    setProfile(false)
   };
-  const sendDelivery = () => {
+  const sendDelivery = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
     dispatch(
       getSettingsDelivery({
         phone: phoneInput as string,
@@ -49,12 +55,16 @@ const Settings = () => {
         id: id as string,
       })
     );
+    setCloseMessage(false) 
+    setDelivery(false)
   };
   const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length < 3 || e.target.value.length > 20) {
       setPasswordError("Пароль має бути від 3 до 20 символів");
+      setPassword(e.target.value);
       if (!e.target.value) {
         setPasswordError("Пароль не може бути пустим");
+        setPassword(e.target.value);
       }
     } else {
       setPasswordError("");
@@ -66,14 +76,13 @@ const Settings = () => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("Поштова адреса не коректна");
+      setEmailInput(e.target.value);
     } else {
       setEmailError("");
       setEmailInput(e.target.value);
-      console.log(e.target.value);
     }
   };
   const blurHandler = (e: React.FocusEvent<HTMLInputElement, Element>) => {
-    console.log(e.target);
     switch (e.target.type) {
       case "email":
         setEmailDirty(true);
@@ -87,9 +96,7 @@ const Settings = () => {
   };
   const activeMessage = () => {
     dispatch(removeMessageAuth());
-    if (!closeMessage) {
-      setCloseMessage(true);
-    }
+    setCloseMessage(true)
   };
   return (
     <div className={style.settings_main}>
@@ -129,7 +136,7 @@ const Settings = () => {
               )}
               <input
                 type="email"
-                name={emailInput as string}
+                value={emailInput as string}
                 onChange={(e) => emailHandler(e)}
                 onBlur={(e) => blurHandler(e)}
                 required
@@ -143,7 +150,7 @@ const Settings = () => {
               <input
                 className={style.input_password}
                 type="password"
-                name={password}
+                value={password}
                 onChange={(e) => passwordHandler(e)}
                 onBlur={(e) => blurHandler(e)}
                 required
