@@ -70,6 +70,7 @@
   .products_block {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
     margin: 10px 10px 10px 10px;
   }
@@ -82,6 +83,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    justify-content: center;
   }
   .product_container > img {
     width: 250px;
