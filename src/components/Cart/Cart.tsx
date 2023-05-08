@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
 import Contacts from "../Contact/Contacts";
 import Footer from "../Footer/Footer";
@@ -13,9 +13,7 @@ const Cart = () => {
   const { order } = useAppSelector((state) => state.cart);
   const { token } = useAppSelector((state) => state.auth);
   const [deliveryModal, setDeliveryModal] = useState<boolean>(false);
-  const [counts, setCounts] = useState<number[]>(
-    useMemo(() => order?.map((el) => el.count) || [], [order])
-  );
+  const [counts, setCounts] = useState<number[]>(order?.map((el) => el.count) || []);
 
   const dispatch = useAppDispatch();
   const handleCountChange = useCallback(
