@@ -6,13 +6,11 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import { removeMessageAuth } from "../../store/auth";
-import { persist } from "../../store/store";
 
 const Settings = () => {
   const { email, fullName, id, phone, address, message } = useAppSelector(
     (state) => state.auth
   );
-  console.log(email)
   const dispatch = useAppDispatch();
   const [emailInput, setEmailInput] = useState(email);
   const [fullNameInput, setFullNameInput] = useState(fullName);
@@ -32,7 +30,7 @@ const Settings = () => {
   );
   const [profile, setProfile] = useState(false);
   const [delivery, setDelivery] = useState(false);
-  const sendProfile = (e: { preventDefault: () => void; }) => {
+  const sendProfile = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
       getSettingsProfile({
@@ -42,11 +40,11 @@ const Settings = () => {
         id: id as string,
       })
     );
-    setCloseMessage(false) 
-    setPassword("")
-    setProfile(false)
+    setCloseMessage(false);
+    setPassword("");
+    setProfile(false);
   };
-  const sendDelivery = (e: { preventDefault: () => void; }) => {
+  const sendDelivery = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
       getSettingsDelivery({
@@ -55,8 +53,8 @@ const Settings = () => {
         id: id as string,
       })
     );
-    setCloseMessage(false) 
-    setDelivery(false)
+    setCloseMessage(false);
+    setDelivery(false);
   };
   const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length < 3 || e.target.value.length > 20) {

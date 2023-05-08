@@ -27,7 +27,7 @@
   color: blue;
   transition: 0.2s;
 }
-@media screen and (max-width: 767px) and (min-width: 400px) {
+@media screen and (max-width: 767px) and (min-width: 360px) {
   .contacts_block {
     background-color: rgb(231, 228, 228);
     text-align: center;
