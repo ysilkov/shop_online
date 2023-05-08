@@ -99,3 +99,15 @@
 .modal_message_hidden {
   display: none;
 }
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .modal_block {
+    height: 550px;
+    margin: 20px 10px 0px 10px;
+    background: white;
+    border-radius: 10px;
+  }
+  .modal_block > h3 {
+    padding-top: 40px;
+  }
+}
+

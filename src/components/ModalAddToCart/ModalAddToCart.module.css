@@ -75,7 +75,24 @@
   cursor: pointer;
   opacity: 0.7;
 }
-
 .hidden {
   display: none;
 }
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    overflow-y: hidden;
+    background-color: rgba(104, 103, 103, 0.4);
+    backdrop-filter: blur(15px);
+  }
+  .modal_block {
+    height: 550px;
+    margin: 20px 10px 0px 10px;
+    background: white;
+    border-radius: 10px;
+  }
+ 
+}
+

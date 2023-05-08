@@ -75,10 +75,9 @@ useEffect(()=>{
                   ))}
                   <tfoot>
                     <tr>
-                      <td colSpan={6}></td>
-                      <td>
-                        Total price order:{" "}
-                        <strong>
+                      <td colSpan={1}><strong>Total price:</strong></td>
+                      <td colSpan={5}></td>
+                      <td><strong>
                           {el.order.reduce(
                             (
                               acc: number,

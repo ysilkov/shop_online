@@ -164,3 +164,38 @@
   color: red;
   margin: 10px 0;
 }
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .settings_block {
+    margin: 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .settings_profile_form, .settings_delivery_form{
+    margin-bottom: 20px;
+    width: 360px;
+    }
+    .modal_message {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 10px 0 10px;
+      padding: 5px 15px;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+    }
+    .message_block {
+      display: inline-flex;
+      justify-content: space-between;
+      margin: 10px 10px;
+      border: 1px solid green;
+      max-width: 360px;
+      padding: 10px 10px;
+      border-radius: 10px;
+      background-color: green;
+      color: white;
+      transition: 0.3s;
+    }
+    
+}
