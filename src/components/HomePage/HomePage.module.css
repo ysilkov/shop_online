@@ -101,7 +101,8 @@
   .main_filter > form > label {
     display: flex;
     flex-direction: column;
-    width: 340px;
+    width: auto;
+    margin-right: 10px
   }
   .main_pagination {
     margin: 20px 0;

@@ -14,4 +14,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  html,
+  body {
+overflow-x: hidden;
+  }
+}
 
