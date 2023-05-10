@@ -109,5 +109,15 @@
   .modal_block > h3 {
     padding-top: 40px;
   }
+  .modal_message {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0 70px;
+    padding: 5px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+  }
 }
 
