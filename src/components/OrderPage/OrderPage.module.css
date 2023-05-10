@@ -5,6 +5,7 @@
   min-height: 100vh;
   top: 0;
   left: 0;
+  overflow-x: hidden;
 }
 .order_block > h3,
 .order_main_message {
@@ -63,6 +64,10 @@
   background: blue;
 }
 @media screen and (max-width: 767px) and (min-width: 360px) {
+  .order_main{
+    overflow-x: hidden;
+    position: relative;
+  }
   .cart_container {
     margin-bottom: 100px;
     height: auto;

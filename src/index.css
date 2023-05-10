@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -16,7 +17,7 @@ code {
 }
 @media screen and (max-width: 767px) and (min-width: 360px) {
   html,
-  body {
+  body{
 overflow-x: hidden;
   }
 }

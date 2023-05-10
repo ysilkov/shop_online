@@ -119,6 +119,10 @@
     right: 5px;
 }
 @media screen and (max-width: 767px) and (min-width: 360px) {
+    .header{
+    overflow-x: hidden;
+    width: 100%;
+    }
     .header_logo_cart{
         height: 22px;
         width: 24px;

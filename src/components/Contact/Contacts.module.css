@@ -32,6 +32,9 @@
     background-color: rgb(231, 228, 228);
     text-align: center;
     font-size: 12px;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
   }
   .contacts_block > h3 {
     padding: 10px 0;

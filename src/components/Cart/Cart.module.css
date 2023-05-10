@@ -103,6 +103,10 @@
   }
 }
 @media screen and (max-width: 767px) and (min-width: 360px) {
+  .cart_block{
+    position: relative;
+    overflow-x: hidden;
+  }
   .cart_container {
     margin-bottom: 100px;
     height: auto;

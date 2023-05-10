@@ -8,3 +8,9 @@
     padding-top: 10px;
     text-align: center;
   }
+  @media screen and (max-width: 767px) and (min-width: 360px) {
+  .footer{
+  overflow-x: hidden;
+    width: auto;
+  }
+}
