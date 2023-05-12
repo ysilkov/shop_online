@@ -21,21 +21,17 @@ const SignIn = () => {
   const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("The postal address is not correct");
-    } else {
-      setEmailError("");
-    }
+    !re.test(String(e.target.value).toLowerCase())
+      ? setEmailError("The postal address is not correct")
+      : setEmailError("");
   };
   const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value.length < 3 || e.target.value.length > 20) {
-      setPasswordError("The password must be between 3 and 20 characters");
-      if (!e.target.value) {
-        setPasswordError("The password cannot be empty");
-      }
-    } else {
-      setPasswordError("");
+    if (!e.target.value) {
+      setPasswordError("The password cannot be empty");
     }
+    e.target.value.length < 3 || e.target.value.length > 20
+      ? setPasswordError("The password must be between 3 and 20 characters")
+      : setPasswordError("");
   };
   const blurHandler = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     switch (e.target.name) {

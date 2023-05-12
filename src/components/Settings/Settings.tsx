@@ -22,9 +22,7 @@ const Settings = () => {
   const [emailDirty, setEmailDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [closeMessage, setCloseMessage] = useState(false);
-  const [emailError, setEmailError] = useState(
-    ""
-  );
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState(
     "The password cannot be empty"
   );
@@ -59,7 +57,9 @@ const Settings = () => {
   const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length < 3 || e.target.value.length > 20) {
       setPasswordError("The password must be between 3 and 20 characters");
-      !e.target.value && setPasswordError("The password cannot be empty");
+      if (!e.target.value) {
+        setPasswordError("The password cannot be empty");
+      }
       setPassword(e.target.value);
     } else {
       setPasswordError("");
@@ -71,7 +71,9 @@ const Settings = () => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("The postal address is not correct");
-      !e.target.value && setEmailError("The password cannot be empty")
+      if (!e.target.value) {
+        setEmailError("The password cannot be empty");
+      }
       setEmailInput(e.target.value);
     } else {
       setEmailError("");
@@ -92,7 +94,7 @@ const Settings = () => {
   };
   const activeMessage = () => {
     dispatch(removeMessageAuth());
-    setCloseMessage(true)
+    setCloseMessage(true);
   };
   return (
     <div className={style.settings_main}>
